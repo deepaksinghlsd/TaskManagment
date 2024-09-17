@@ -13,7 +13,7 @@ function EmployeeDashboard() {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get('http://localhost:4400/api/v1/tasks', {
+      const response = await axios.get('http://localhost:4400/api/v1/GETTASK', {
         withCredentials: true
       });
       setTasks(response.data);
@@ -25,7 +25,7 @@ function EmployeeDashboard() {
 
   const updateTaskStatus = async (taskId, newStatus) => {
     try {
-      await axios.put(`http://localhost:4400/api/v1/tasks/${taskId}`, { status: newStatus }, {
+      await axios.put(`http://localhost:4400/api/v1/${taskId}`, { status: newStatus }, {
         withCredentials: true
       });
       fetchTasks();

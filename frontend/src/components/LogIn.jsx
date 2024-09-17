@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useAuth } from '../context/AuthContext'; // Adjust the path as needed
-
+import { useAuth } from '../context/AuthContext'; 
 function Login({ onSwitchToSignup }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,10 +17,7 @@ function Login({ onSwitchToSignup }) {
         { withCredentials: true }
       );
       
-      // We don't need to store the token in localStorage when using HTTP-only cookies
-      // localStorage.setItem('token', response.data.token);
-
-      login(response.data.user); // Assuming the response includes user data
+      login(response.data.user); 
     } catch (error) {
       console.error('Login error:', error.response ? error.response.data : error.message);
       setError(error.response?.data?.message || 'Login failed. Please check your credentials.');

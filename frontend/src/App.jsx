@@ -1,4 +1,4 @@
-// src/App.js
+
 import React , { useState } from 'react';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './components/LogIn';

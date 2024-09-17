@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useAuth } from '../context/AuthContext'; // Adjust the path as needed
+import { useAuth } from '../context/AuthContext'; 
 
 function AdminDashboard() {
   const [tasks, setTasks] = useState([]);
@@ -15,8 +15,8 @@ function AdminDashboard() {
   }, []);
 
   const fetchTasks = async () => {
-    try {
-      const response = await axios.get('http://localhost:4400/api/v1/tasks', {
+    try {tasks
+      const response = await axios.get('http://localhost:4400/api/v1/all', {
         withCredentials: true
       });
       setTasks(response.data);
@@ -28,7 +28,7 @@ function AdminDashboard() {
 
   const fetchEmployees = async () => {
     try {
-      const response = await axios.get('http://localhost:4400/api/v1/employees', {
+      const response = await axios.get('http://localhost:4400/api/v1/employee', {
         withCredentials: true
       });
       console.log('Fetched employees:', response.data);

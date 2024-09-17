@@ -4,7 +4,7 @@ require("dotenv").config();
 exports.isAuthenticated = async (req, res, next) => {
   console.log(req.cookies.Token);
 
-  const token = req.cookies.Token;
+  const token = req.cookies.token;
 
   if (!token) {
     return res
